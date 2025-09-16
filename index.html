@@ -1,0 +1,187 @@
+<!DOCTYPE html><html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="minimum-scale=1.0, maximum-scale=1.0, width=device-width">
+    <meta name="description" content="IIAP - John Von Neumann">
+    <meta property="og:site_name" content="iiap.org.co">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@iiapco">
+    <link rel="stylesheet" type="text/css" media="all" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" type="text/css" media="all" href="https://iiap.org.co/assets/styles/main.css?v=1.4">
+    <link rel="stylesheet" type="text/css" media="all" href="https://iiap.org.co/assets/styles/site.css?v=5.2">
+    <link rel="stylesheet" type="text/css" media="all" href="https://iiap.org.co/assets/styles/rich.css?v=1.1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="icon" type="image/png" href="https://iiap.org.co/assets/images/icon.png">
+    <title>Soporte IIAP</title>
+    <style>
+      .grid-container {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+          padding: 20px;
+          min-height: 200px;
+          background-color: #2b2b2b;
+      }
+      
+      .grid-button {
+          min-height: 100px;
+          background-color: #343024;
+          border: 2px solid #62BB62;
+          border-radius: 10px;
+          color: white;
+          cursor: pointer;
+          font-size: 2em;
+      }
+
+      i{
+        margin-right: 20px;
+      }
+      </style>
+  </head>
+  <body>
+    <div id="head" bind:class="[show: show]"><div class="mark"><div class="wrap"><a href="https://www.minambiente.gov.co" target="_blank"><img src="https://iiap.org.co/assets/images/life.png" main></a><a href="https://www.gov.co" target="_blank"><img src="https://iiap.org.co/assets/images/mark.svg" last></a></div></div><div class="main"><div class="wrap"><div class="logo"><a href="//iiap.org.co/"><img src="https://iiap.org.co/assets/images/logo.png"><sup>Instituto de Investigaciones Ambientales del Pacífico</sup><sub>John Von Neumann</sub></a></div><div class="side"><div class="find"><form method="post" action="/buscar" autocomplete="off"><input type="text" name="text" placeholder="Buscar..."><button><svg><path d="M9.516 14.016c2.484 0 4.5-2.016 4.5-4.5s-2.016-4.5-4.5-4.5-4.5 2.016-4.5 4.5 2.016 4.5 4.5 4.5zM15.516 14.016l4.969 4.969-1.5 1.5-4.969-4.969v-0.797l-0.281-0.281c-1.125 0.984-2.625 1.547-4.219 1.547-3.609 0-6.516-2.859-6.516-6.469s2.906-6.516 6.516-6.516 6.469 2.906 6.469 6.516c0 1.594-0.563 3.094-1.547 4.219l0.281 0.281h0.797z"></path></svg></button></form></div><button hook:click="call zoom with false" hide><svg><path d="M5.12,14L7.5,7.67L9.87,14M6.5,5L1,19H3.25L4.37,16H10.62L11.75,19H14L8.5,5H6.5M18,17L23,11.93L21.59,10.5L19,13.1V7H17V13.1L14.41,10.5L13,11.93L18,17Z"></path></svg></button><button hook:click="call zoom with true" hide><svg><path d="M5.12,14L7.5,7.67L9.87,14M6.5,5L1,19H3.25L4.37,16H10.62L11.75,19H14L8.5,5H6.5M18,7L13,12.07L14.41,13.5L17,10.9V17H19V10.9L21.59,13.5L23,12.07L18,7Z"></path></svg></button><button hook:click="call next with '/sign'"><svg><path d="M12 14.016c2.672 0 8.016 1.313 8.016 3.984v2.016h-16.031v-2.016c0-2.672 5.344-3.984 8.016-3.984zM12 12c-2.203 0-3.984-1.781-3.984-3.984s1.781-4.031 3.984-4.031 3.984 1.828 3.984 4.031-1.781 3.984-3.984 3.984z"></path></svg></button><label><input type="checkbox" name="head:menu:language"><svg><path d="M16.359 14.016h3.375c0.141-0.656 0.281-1.313 0.281-2.016s-0.141-1.359-0.281-2.016h-3.375c0.094 0.656 0.141 1.313 0.141 2.016s-0.047 1.359-0.141 2.016zM14.578 19.547c1.828-0.609 3.422-1.922 4.359-3.563h-2.953c-0.328 1.266-0.797 2.438-1.406 3.563zM14.344 14.016c0.094-0.656 0.141-1.313 0.141-2.016s-0.047-1.359-0.141-2.016h-4.688c-0.094 0.656-0.141 1.313-0.141 2.016s0.047 1.359 0.141 2.016h4.688zM12 19.969c0.844-1.219 1.5-2.531 1.922-3.984h-3.844c0.422 1.453 1.078 2.766 1.922 3.984zM8.016 8.016c0.328-1.266 0.797-2.438 1.406-3.563-1.828 0.609-3.422 1.922-4.359 3.563h2.953zM5.063 15.984c0.938 1.641 2.531 2.953 4.359 3.563-0.609-1.125-1.078-2.297-1.406-3.563h-2.953zM4.266 14.016h3.375c-0.094-0.656-0.141-1.313-0.141-2.016s0.047-1.359 0.141-2.016h-3.375c-0.141 0.656-0.281 1.313-0.281 2.016s0.141 1.359 0.281 2.016zM12 4.031c-0.844 1.219-1.5 2.531-1.922 3.984h3.844c-0.422-1.453-1.078-2.766-1.922-3.984zM18.938 8.016c-0.938-1.641-2.531-2.953-4.359-3.563 0.609 1.125 1.078 2.297 1.406 3.563h2.953zM12 2.016c5.531 0 9.984 4.453 9.984 9.984s-4.453 9.984-9.984 9.984-9.984-4.453-9.984-9.984 4.453-9.984 9.984-9.984z"></path></svg><div class="list"><dl><dt><a href="//iiap.org.co/es">Espa&ntilde;ol</a></dt><dt><a href="//iiap.org.co/en">English</a></dt></dl></div></label></div></div></div><div class="menu"><div class="wrap"><input type="checkbox" id="head:menu:main"><nav><div class="knobs"><div class="home"><a href="//iiap.org.co/"><svg><path d="M22.347 13.585l-10.347-8.031-10.347 8.031v-3.274l10.347-8.031 10.347 8.031zM19.76 13.293v7.76h-5.173v-5.173h-5.173v5.173h-5.173v-7.76l7.76-5.82z"></path></svg></a></div><div class="drop"><label for="head:menu:main" title="Menú"><svg><path d="M3 6h18v2.016h-18v-2.016zM3 12.984v-1.969h18v1.969h-18zM3 18v-2.016h18v2.016h-18z"></path></svg></label></div></div><div class="items"><dl><dd><b>Entidad</b><p><a href="//iiap.org.co/nosotros">¿Quienes somos?</a><a href="//iiap.org.co/estructura">Estructura organizacional</a><a href="//iiap.org.co/empleados">Empleados</a><a href="//iiap.org.co/normatividad">Normatividad</a><a href="//iiap.org.co/entidades">Entidades relacionadas</a><a href="//iiap.org.co/entes">Entes de control</a><a href="//iiap.org.co/files/actores-de-interes.pdf">Actores de interés</a><a href="//iiap.org.co/terminos">Términos de uso</a><a href="//iiap.org.co/preguntas">Preguntas frecuentes</a><a href="//iiap.org.co/glosario">Glosario</a></p></dd><dd><b>Transparencia</b><p><a href="//iiap.org.co/politicas">Políticas</a><a href="//iiap.org.co/planes">Planes</a><a href="https://sgc.iiap.org.co" target="_blank">Procesos</a><a href="//iiap.org.co/programas">Programas</a><a href="//iiap.org.co/proyectos">Proyectos</a><a href="//iiap.org.co/presupuestos">Presupuestos</a><a href="//iiap.org.co/informes">Informes</a><a href="//iiap.org.co/manuales">Manuales</a><a href="//iiap.org.co/convocatorias">Convocatorias</a><a href="//iiap.org.co/contrataciones">Contrataciones</a><a href="//iiap.org.co/procesos">Procesos y Procedimientos</a><a href="//iiap.org.co/tablas">Tablas de retención documental</a></p></dd><dt><a href="//iiap.org.co/publicaciones">Publicaciones</a></dt><dt><a href="//iiap.org.co/noticias">Noticias</a></dt><dt><a href="//iiap.org.co/eventos">Eventos</a></dt><dt><a href="//iiap.org.co/solicitudes">PQRSD</a></dt><dt><a href="//iiap.org.co/contacto">Contacto</a></dt></dl></div></nav></div></div><script type="text/html"><div class="alert mask" bind:class="{[show: alert.show, done: alert.type is done, warn: alert.type is warn, fail: alert.type is fail]}"><div class="case"><div class="head"><strong>{alert.name}</strong><button hook:click="{set alert.show: false}"><img src="https://iiap.org.co/assets/images/close.svg"></button></div><div class="body"><p>{raw alert.text}</p></div></div></div><div class="snack" bind:class="{[show: snack.show, done: snack.type is done, warn: snack.type is warn, fail: snack.type is fail]}"><div class="hide"></div><div class="icon"></div><div class="text"><p>{snack.text}</p></div></div><div class="toast" bind:class="{[show: toast.show, done: toast.type is done, warn: toast.type is warn, fail: toast.type is fail]}"><button hook:click="{set toast.show: false}"><img src="https://iiap.org.co/assets/images/close.svg"></button><p>{raw toast.text}</p></div></script></div><div id="body">
+  <div class="home" id="home">
+
+    <div class="grid-container">
+      <button class="grid-button" onclick="window.location.href='https://forms.office.com/r/Wu24Gh4SCv'"><i class="fa-solid fa-headset"></i>Solicitud de Soporte Técnico</button>
+      <button class="grid-button" onclick="window.location.href='https://forms.office.com/r/ngX6NEG4pc'"><i class="fa-solid fa-check"></i>Formulario Satisfacción de Usuario</button>
+  </div>
+
+  </div>
+
+
+<div id="foot"><div class="main"><div class="wrap"><div class="grid"><div class="item"><div class="about"><sup><a href="//iiap.org.co/nosotros">Acerca de <b>IIAP</b></a></sup><sub><p>John Von Neumann</p></sub><div><p>El Instituto de Investigaciones Ambientales del Pacífico brinda apoyo científico, tecnológico y de conocimiento a las comunidades asentadas en el Chocó Biogeográfico, al SINA y MADS.</p><ul><li class="phone" title="Teléfono"><p><a href="tel:+57 (4) 670 9126">+57 (4) 670 9126</a>, <a href="tel:+57 312 288 8110">+57 312 288 8110</a></p></li><li class="mail" title="Correo"><b>Contáctenos</b><a href="mailto: iiap@iiap.org.co">iiap@iiap.org.co</a></li><li class="mail" title="Correo"><b>Notificaciones Judiciales</b><a href="mailto: notificacionesjudiciales@iiap.org.co">notificacionesjudiciales@iiap.org.co</a></li><li class="address" title="Dirección"><p>Cra 7 No 29 - 57 B/César Conto, Quibdó - Chocó</p></li></ul></div></div></div><div class="item"><input type="checkbox" id="foot:main:links"><div class="links"><label for="foot:main:links">Enlaces</label><div><ul><li><a href="http://humboldt.org.co" target="blank">Instituto Humbolt</a></li><li><a href="http://sinchi.org.co" target="blank">Instituto Sinchi</a></li><li><a href="http://invemar.org.co" target="blank">Instituto Invemar</a></li><li><a href="http://sibcolombia.net" target="blank">SIB Colombia</a></li></ul></div></div></div><div class="item"><input type="checkbox" id="foot:main:touch"><div class="touch"><label for="foot:main:touch">Suscríbete</label><div><p>Suscríbite y recibirás información actualizada de todas nuestras actividades.</p><form method="post" accept="/subscribe" autocomplete="off"><input type="text" name="mail" placeholder="Tu correo electrónico"><button type="submit">Suscribir</button></form><h3>Síguenos</h3><ul><li><a class="facebook" href="https://facebook.com/IIAPCO" title="Facebook" target="blank"><img src="https://iiap.org.co/assets/images/pixel.png"></a></li><li><a class="twitter" href="https://twitter.com/iiap_co" title="Twitter" target="blank"><img src="https://iiap.org.co/assets/images/pixel.png"></a></li><li><a class="youtube" href="https://youtube.com/channel/UCuxOL0BAHcc_AqXHTH4Vaiw" title="Youtube" target="blank"><img src="https://iiap.org.co/assets/images/pixel.png"></a></li><li><a class="feed" href="/feed" title="Feeds"><img class="icon" src="/assets/images/pixel.png"></a></li></ul></div></div></div></div></div></div><div class="panel"><div class="wrap"><div class="menu"><dl role="menu"><dt><a href="//iiap.org.co/home">Inicio</a></dt><dt><a href="//iiap.org.co/mapa">Mapa del sitio</a></dt><dt><a href="//iiap.org.co/terminos">Terminos</a></dt><dt><a href="//iiap.org.co/proteccion">Protección de datos personales</a></dt></dl></div><div class="side"><strong>Copyright&nbsp;&copy;&nbsp;2018&nbsp;IIAP</strong><small>Powered by&nbsp;<a href="https://bontris.com" target="blank">Bontris</a></small><span><a href="#top" title="Back to top"><svg><path d="M3.984 12l8.016-8.016 8.016 8.016-1.453 1.406-5.578-5.578v12.188h-1.969v-12.188l-5.625 5.578z"></path></svg></a></span></div></div></div><div class="mark"><div class="wrap"><a href="https://www.colombia.co" target="_blank"><img src="https://iiap.org.co/assets/images/pais.svg" main></a><a href="https://www.gov.co" target="_blank"><img src="https://iiap.org.co/assets/images/mark.svg" last></a></div></div></div><script src="/assets/scripts/view.js?v=1.1"></script><script src="/assets/scripts/pipes/size.js"></script><script src="/assets/scripts/blocks/file.js?v=1.0"></script><script src="/assets/scripts/blocks/list.js?v=1.1"></script><script src="/assets/scripts/traits/hint.js"></script><script src="/assets/scripts/traits/show.js"></script><script>
+      // [CDATA[
+      (function (root, mount, same, each, wait, wrap) {
+        'use strict'
+
+        mount('#head', {
+          states: {
+            alert: {
+              data: {
+                show: false,
+                type: null,
+                name: null,
+                text: null
+              },
+            },
+            snack: {
+              data: {
+                show: false,
+                type: null,
+                text: null,
+                link: null
+              }
+            },
+            toast: {
+              data: {
+                show: false,
+                wait: 3000,
+                type: null,
+                text: null,
+                time: null,
+                next: null
+              },
+              hook: function (data, name) {
+                if (same(this.state.toast.show, true)) {
+                  wait(this.state.toast.wait, function (time) {
+                    this.state.toast = {time: null,
+                                        show: false};
+                  }, null, this);
+                }
+              }
+            },
+            show: false,
+          },
+          events: {
+            exit: function (time) {
+              alert(time);
+            }
+          },
+          take: function (task, emit) {
+            switch (task.type) {
+              case 'alert:show':
+                return (this.state.alert = each(task.data, function (data, name) {
+                  this[name] = data;
+                }, {show: true}));
+              case 'snack:show':
+                return (this.state.snack = each(task.data, function (data, name) {
+                  this[name] = data;
+                }, {show: true}));
+              case 'toast:show':
+                return (this.state.toast = each(task.data, function (data, name) {
+                  this[name] = data;
+                }, {show: true}));
+            }
+          },
+          main: function (host) {
+            root.hook('scroll', function (event) {
+              if (same(host.style.getx('position'), 'fixed')) {
+                if ((root.top > host.height)) {
+                  this.state.show = true;
+
+                  host.top = 0;
+                } else {
+                  this.state.show = false;
+
+                  host.top = -root.top;
+                }
+              }
+            }, this, false);
+          },
+          zoom: function (more) {
+            var body = wrap('#body');
+
+            var zoom = parseFloat(body.style.getx('zoom'));
+
+            if (more) {
+              if ((zoom < 1.6)) {
+                body.style.setx('zoom', zoom + 0.1);
+              }
+            } else {
+              if ((zoom > 1.0)) {
+                body.style.setx('zoom', zoom - 0.1);
+              }
+            }
+          },
+          next: function (path) {
+            window.location.href = path;
+          },
+          path: "/home",
+          page: "Inicio"
+        }, true, 'main')
+      })(View.wrap(window), View.mount, View.same, View.each, View.wait, View.wrap)
+      // ]]>
+    </script>
+  <script>
+    // [CDATA[
+    (function (mount, loop, same, max) {
+      'use strict'
+
+      mount('#home', {
+      	states: {
+          clips: [{"item":"1","hash":"952220dc51f9318b4c7c6f0f112cf776","title":"Prueba #1","image":"db4420210a5113b58288fb5a37aea76f","source":"e41b037138a96440e6048f61d03bbbe5","extract":"Esta es una prueba","publication":null,"skip":{"row":"1","live":"0","hash":"c5244089ad29aaaba4434ab0c4fbdfba","mail":"team@iiap.org.co","work":"670 9126","last":"Von Neumann","name":"John","nick":"root","face":"4bf3882980f5080948bde47e7d306037"}}],
+          cards: [{"item":"67","hash":"d9abce1548db01b081649a4a730eb12e","text":null,"note":"Calendario Ambiental Septiembre","link":null,"image":"00aee36f26e84ecea242ce631147671b","publication":"2024-09-16 16:23:33","sort":{"row":null,"hash":null,"slug":null,"name":null,"fill":null},"file":{"hash":null,"name":null,"type":null}},{"item":"61","hash":"0c93e9d12ebe327a09280e1cb42d7dfe","text":"MANUAL IMAGEN CORPORATIVA IIAP","note":"Dando cumplimiento a lo dispuesto en la Ley 2345 Chao Marcas. Se comparte, para socializar, el manual de imagen corporativa del IIAP","link":"https:\/\/iiap.org.co\/manuales\/e78bb2a0cb69867e8b54f5e6cc52a308","image":"ab4a32acce964e738c5a521d5bbc7e78","publication":"2024-06-28 19:30:13","sort":{"row":null,"hash":null,"slug":null,"name":null,"fill":null},"file":{"hash":"0e1886c6d44bf43088ccc0cfb85a5931","name":"MANUAL IMAGEN IIAP LEY 2345  CHAO MARCAS.pdf","type":"application\/pdf"}},{"item":"48","hash":"798a7266fc3146e4b0bee1977097419e","text":"Somos Investigaci\u00f3n","note":null,"link":null,"image":"b73a3b2699898467c799febf59e7ad94","publication":"2023-05-31 16:32:48","sort":{"row":null,"hash":null,"slug":null,"name":null,"fill":null},"file":{"hash":null,"name":null,"type":null}},{"item":"11","hash":"ac76d1196b0776f2b88bce432746c914","text":null,"note":null,"link":null,"image":"884b3226bd86767a919725f331f466b0","publication":"2020-03-17 15:31:30","sort":{"row":null,"hash":null,"slug":null,"name":null,"fill":null},"file":{"hash":null,"name":null,"type":null}}],
+          posts: [{"slug":"choco-biogeografico-presente-con-las-voces-de-las-comunidades-en-la-cop16","image":"b39873ce7b6144e54437d504eb5e6f8f","title":"Choc\u00f3 Biogeogr\u00e1fico presente con las voces de las comunidades en la COP16","extract":"Haremos visible el compromiso de hombres y mujeres en relaci\u00f3n a la conservaci\u00f3n de la Biodiversidad","caption":"","publication":"2024-10-09 16:07:12","sort":{"row":null,"hash":null,"slug":null,"name":null,"fill":null},"skip":{"hash":"00cf729e4d447bccdc5b751881b724ed","last":"Uribe Lemus","name":"Maria Brenilde","face":null}},{"slug":"las-voces-de-la-biodiversidad-desde-territorio-hasta-la-cop16","image":"644f89d35384d22bb0290ee28b1ee919","title":"LAS VOCES DE LA BIODIVERSIDAD DESDE TERRITORIO, HASTA LA COP16","extract":"Desde el IIAP y en alianza con actores de inter\u00e9s, se realizaran espacios acad\u00e9micos y actividades que evidencien nuestra potencialidad Biodiversa y el aporte de las comunidades en su conservacion.","caption":"Con vestidores como este, haremos entrega de informaci\u00f3n relevante del ChB.","publication":"2024-08-31 00:00:00","sort":{"row":null,"hash":null,"slug":null,"name":null,"fill":null},"skip":{"hash":"00cf729e4d447bccdc5b751881b724ed","last":"Uribe Lemus","name":"Maria Brenilde","face":null}},{"slug":"comunidades-negras-de-cocomanorte-en-el-corazon-de-la-migracion-impactos-y-realidades","image":"21ffbc1812e6615598c0be479a7a5c1f","title":"COMUNIDADES NEGRAS DE COCOMANORTE EN EL CORAZ\u00d3N DE LA MIGRACI\u00d3N: IMPACTOS Y REALIDADES.","extract":"Se requiere de manera urgente determinar y abordar los impactos sociales, econ\u00f3micos y culturales resultantes de esta movilizaci\u00f3n humana.","caption":"","publication":"2024-06-28 00:00:00","sort":{"row":null,"hash":null,"slug":null,"name":null,"fill":null},"skip":{"hash":"00cf729e4d447bccdc5b751881b724ed","last":"Uribe Lemus","name":"Maria Brenilde","face":null}}],
+          dates: [],
+          stop: false,
+          card: 0,
+      	},
+      	main: function (host) {
+          loop(6000, function (time) {
+            if (same(this.state.stop, false)) {
+              this.move(this.state.card + 1, false);
+            } else {
+              return true;
+            }
+          }, this);
+      	},
+        move: function (next, stop) {
+          this.state = {card: max(next % this.state.cards.length, 0), stop: stop};
+        }
+      }, true)
+    })(View.mount, View.loop, View.same, Math.max);
+    // ]]>
+  </script>
+</body></html>
